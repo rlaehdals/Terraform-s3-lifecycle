@@ -10,7 +10,7 @@ resource "aws_s3_bucket_lifecycle_configuration" "example" {
     status = "Enabled"
 
     filter {
-      prefix = "public/"
+      prefix = "test/"
     }
 
     transition {
@@ -24,7 +24,7 @@ resource "aws_s3_bucket_lifecycle_configuration" "example" {
     }
 
     abort_incomplete_multipart_upload {
-      days_after_initiation = 2
+      days_after_initiation = 14
     }
   }
 }
